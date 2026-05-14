@@ -1405,6 +1405,25 @@
             color: #666;
         }
     </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1630707691338031');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1630707691338031&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -1891,15 +1910,15 @@
             }
         });
 
-        // Countdown Timer (24 hours from page load)
+        // Countdown Timer (15 minutes from page load)
         function startCountdown() {
             // Check if there's a saved end time in localStorage
-            let endTime = localStorage.getItem('offerEndTime');
+            let endTime = localStorage.getItem('offerEndTime15m');
             
             if (!endTime) {
-                // Set countdown to 24 hours from now
-                endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
-                localStorage.setItem('offerEndTime', endTime);
+                // Set countdown to 15 minutes from now
+                endTime = new Date().getTime() + (15 * 60 * 1000);
+                localStorage.setItem('offerEndTime15m', endTime);
             }
 
             const countdown = setInterval(function() {
@@ -1909,7 +1928,7 @@
                 if (distance < 0) {
                     clearInterval(countdown);
                     // Reset timer when it expires
-                    localStorage.removeItem('offerEndTime');
+                    localStorage.removeItem('offerEndTime15m');
                     startCountdown();
                     return;
                 }
