@@ -1418,12 +1418,22 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1630707691338031');
     fbq('track', 'PageView');
-    fbq('track', 'ViewContent');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1630707691338031&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+
+    <!-- Utmify Pixel Code -->
+    <script>
+      window.pixelId = "6a051b6cb209fc11a8cb4e55";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+    <!-- End Utmify Pixel Code -->
 </head>
 <body>
 
@@ -1985,6 +1995,17 @@
                 }
             });
         });
+
+        // Trigger ViewContent on First Scroll
+        let viewContentFired = false;
+        window.addEventListener('scroll', function() {
+            if (!viewContentFired && window.scrollY > 10) {
+                viewContentFired = true;
+                if (typeof fbq === 'function') {
+                    fbq('track', 'ViewContent');
+                }
+            }
+        }, { passive: true });
     </script>
 
 </body>
