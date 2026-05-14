@@ -1873,53 +1873,7 @@
             <span class="footer-copy">&copy; 2024 Todos os direitos reservados.</span>
         </div>
     </footer>
-
-    <!-- EXIT INTENT POPUP -->
-    <div id="exitPopup" class="exit-popup">
-        <div class="exit-popup-content">
-            <button class="close-popup" onclick="closePopup()">&times;</button>
-            <h2>🎣 Antes de sair...</h2>
-            <p class="exit-subtitle">Você ainda pode garantir as 30 receitas por um valor bem acessível.</p>
-            
-            <div class="exit-offer">
-                <p class="exit-text">Material em PDF, acesso imediato, ingredientes simples de encontrar.</p>
-                
-                <div class="exit-price">
-                    <span class="exit-old">R$ 14,90</span>
-                    <span class="exit-new">R$ 10,90</span>
-                </div>
-                
-                <p class="exit-features">✅ 30 Receitas • Acesso imediato • Funciona no celular</p>
-                
-                <a href="#pricing" class="exit-cta" onclick="closePopup()">QUERO AS 30 RECEITAS</a>
-                
-                <button class="exit-decline" onclick="closePopup()">Não, obrigado.</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Exit Intent Popup
-        let popupShown = false;
-        
-        document.addEventListener('mouseleave', function(e) {
-            if (e.clientY <= 0 && !popupShown) {
-                document.getElementById('exitPopup').classList.add('show');
-                popupShown = true;
-            }
-        });
-
-        function closePopup() {
-            document.getElementById('exitPopup').classList.remove('show');
-        }
-
-        // Close popup when clicking outside
-        document.getElementById('exitPopup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePopup();
-            }
-        });
-
         // Countdown Timer (15 minutes from page load)
         function startCountdown() {
             // Check if there's a saved end time in localStorage
@@ -1995,18 +1949,6 @@
                 }
             });
         });
-
-        // Trigger ViewContent on First Scroll
-        let viewContentFired = false;
-        window.addEventListener('scroll', function() {
-            if (!viewContentFired && window.scrollY > 10) {
-                viewContentFired = true;
-                if (typeof fbq === 'function') {
-                    fbq('track', 'ViewContent');
-                }
-            }
-        }, { passive: true });
     </script>
-
 </body>
 </html>
