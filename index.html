@@ -1727,7 +1727,7 @@
                     <li>✅ Garantia de 7 Dias</li>
                     <li>✅ <strong>BÔNUS: 5 Receitas de Atrativos</strong></li>
                 </ul>
-                <a href="https://tilimcheckout.com/checkout?p=fd9406b291f76578564a134b431e18f8" class="btn-plan btn-featured utmify-link" onclick="fbq('track', 'InitiateCheckout');">QUERO RECEBER AS 30 RECEITAS</a>
+                <a href="https://tilimcheckout.com/checkout?p=fd9406b291f76578564a134b431e18f8" class="btn-plan btn-featured">QUERO RECEBER AS 30 RECEITAS</a>
             </div>
         </div>
         <p class="pricing-note">🔒 Pagamento seguro • ⚡ Acesso instantâneo • 🛡️ Garantia de 7 dias</p>
@@ -1865,7 +1865,7 @@
     <section class="final-cta">
         <h2>Pronto pra testar na próxima pescaria?</h2>
         <p>Material em PDF, acesso imediato, ingredientes simples.</p>
-        <a href="https://tilimcheckout.com/checkout?p=fd9406b291f76578564a134b431e18f8" class="cta-primary utmify-link" onclick="fbq('track', 'InitiateCheckout');">QUERO RECEBER AS 30 RECEITAS AGORA</a>
+        <a href="https://tilimcheckout.com/checkout?p=fd9406b291f76578564a134b431e18f8" class="cta-primary">QUERO RECEBER AS 30 RECEITAS AGORA</a>
         <p style="margin-top: 18px; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Acesso imediato &nbsp;•&nbsp; PDF no celular &nbsp;•&nbsp; Pagamento seguro</p>
     </section>
 
@@ -1957,22 +1957,6 @@
                     });
                 }
             });
-        });
-
-        // Script para forçar o repasse de parâmetros (UTMs) para o checkout
-        document.addEventListener("DOMContentLoaded", function() {
-            const urlParams = window.location.search;
-            if (urlParams) {
-                const query = urlParams.substring(1); // remove o "?"
-                document.querySelectorAll('a[href*="tilimcheckout.com"]').forEach(function(link) {
-                    const href = link.getAttribute('href');
-                    if (href.indexOf('?') !== -1) {
-                        link.setAttribute('href', href + '&' + query);
-                    } else {
-                        link.setAttribute('href', href + '?' + query);
-                    }
-                });
-            }
         });
     </script>
 </body>
