@@ -1883,17 +1883,56 @@
                 .pricing-grid-custom {
                     flex-direction: column;
                     align-items: center;
-                    gap: 40px;
-                    margin: 30px auto;
+                    gap: 24px;
+                    margin: 20px auto;
+                    padding: 0 14px;
                 }
-                
+
+                .card-basic-custom {
+                    max-width: 100%;
+                    padding: 24px 18px;
+                }
+
                 .card-premium-custom {
                     transform: scale(1) !important;
-                    margin-top: 10px;
+                    margin-top: 0;
+                    max-width: 100%;
+                    padding: 28px 18px;
+                    border-width: 3px;
                 }
-                
+
                 .card-premium-custom:hover {
-                    transform: scale(1.02) !important;
+                    transform: scale(1) !important;
+                }
+
+                .pricing-tag-orange {
+                    font-size: 0.7rem;
+                    padding: 5px 12px;
+                    white-space: nowrap;
+                }
+
+                .btn-premium-custom {
+                    font-size: 1rem;
+                    padding: 16px 12px;
+                }
+
+                .plan-features-custom li {
+                    font-size: 0.88rem;
+                }
+            }
+
+            @media (max-width: 400px) {
+                .pricing-grid-custom {
+                    padding: 0 10px;
+                }
+
+                .card-basic-custom,
+                .card-premium-custom {
+                    padding: 22px 14px;
+                }
+
+                .card-premium-custom .amount {
+                    font-size: 3.4rem !important;
                 }
             }
 
