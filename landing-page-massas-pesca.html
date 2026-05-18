@@ -1706,29 +1706,494 @@
 
     <!-- PRICING CARDS -->
     <section class="pricing" id="pricing">
-        <h2 class="section-title fade-in">Garanta Seu Acesso</h2>
-        <div class="pricing-grid" style="max-width: 480px; margin: 0 auto;">
-            <!-- PLANO ÚNICO -->
-            <div class="pricing-card featured fade-in">
-                <div class="popular-badge">🔥 MAIS VENDIDO</div>
-                <div class="plan-header">
-                    <h3>30 Receitas de Massinha</h3>
-                    <p class="plan-subtitle">Acesso imediato em PDF</p>
+        <h2 class="section-title fade-in">Escolha Seu Plano e Comece Hoje Mesmo</h2>
+        
+        <style>
+            .pricing-grid-custom {
+                display: flex;
+                justify-content: center;
+                align-items: stretch;
+                gap: 30px;
+                max-width: 980px;
+                margin: 40px auto;
+                padding: 0 20px;
+            }
+            
+            .card-basic-custom {
+                background: #f8fafc;
+                border: 2px solid #cbd5e1;
+                border-radius: 16px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+                padding: 35px 25px;
+                width: 100%;
+                max-width: 440px;
+                position: relative;
+                opacity: 0.65;
+                filter: grayscale(35%);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-self: center;
+                transition: all 0.3s ease;
+            }
+            .card-basic-custom:hover {
+                opacity: 0.8;
+                filter: grayscale(10%);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            }
+            
+            .card-premium-custom {
+                background: #ffffff;
+                border: 4px solid #FF6B35;
+                border-radius: 16px;
+                box-shadow: 0 20px 45px rgba(255, 107, 53, 0.25);
+                padding: 35px 25px;
+                width: 100%;
+                max-width: 460px;
+                position: relative;
+                transform: scale(1.05);
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                transition: all 0.3s ease;
+            }
+            .card-premium-custom:hover {
+                transform: scale(1.07);
+                box-shadow: 0 25px 55px rgba(255, 107, 53, 0.35);
+            }
+            
+            .pricing-tag-gray {
+                position: absolute;
+                top: -12px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #64748b;
+                color: #ffffff;
+                padding: 4px 14px;
+                font-size: 0.75rem;
+                font-weight: 700;
+                border-radius: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                white-space: nowrap;
+            }
+            
+            .pricing-tag-orange {
+                position: absolute;
+                top: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #FF6B35;
+                color: #ffffff;
+                padding: 6px 18px;
+                font-size: 0.8rem;
+                font-weight: 800;
+                border-radius: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+                animation: pulse-badge 2s infinite ease-in-out;
+                white-space: nowrap;
+            }
+            
+            .btn-basic-custom {
+                display: block;
+                width: 100%;
+                padding: 16px;
+                text-align: center;
+                background: #5a6e85;
+                color: white;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: 700;
+                font-size: 1rem;
+                letter-spacing: 0.5px;
+                transition: all 0.3s ease;
+                border: none;
+                cursor: pointer;
+            }
+            .btn-basic-custom:hover {
+                background: #405166;
+                transform: translateY(-2px);
+            }
+            
+            .btn-premium-custom {
+                display: block;
+                width: 100%;
+                padding: 18px;
+                text-align: center;
+                background: linear-gradient(135deg, #FF6B35 0%, #E0531F 100%);
+                color: white;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: 800;
+                font-size: 1.15rem;
+                letter-spacing: 0.5px;
+                box-shadow: 0 6px 20px rgba(255, 107, 53, 0.35);
+                animation: pulse-orange 2s infinite;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            .btn-premium-custom:hover {
+                background: linear-gradient(135deg, #E0531F 0%, #C44111 100%);
+                box-shadow: 0 8px 25px rgba(255, 107, 53, 0.55);
+                transform: translateY(-2px);
+            }
+            
+            .plan-features-custom {
+                list-style: none;
+                padding: 0;
+                margin: 25px 0;
+                text-align: left;
+            }
+            
+            .plan-features-custom li {
+                padding: 8px 0;
+                font-size: 0.95rem;
+                color: #334155;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            @keyframes pulse-orange {
+                0% {
+                    transform: scale(1);
+                    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+                }
+                70% {
+                    transform: scale(1.02);
+                    box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+                }
+                100% {
+                    transform: scale(1);
+                    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+                }
+            }
+            
+            @keyframes pulse-badge {
+                0% { transform: translateX(-50%) scale(1); }
+                50% { transform: translateX(-50%) scale(1.05); }
+                100% { transform: translateX(-50%) scale(1); }
+            }
+            
+            @media (max-width: 768px) {
+                .pricing-grid-custom {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 40px;
+                    margin: 30px auto;
+                }
+                
+                .card-premium-custom {
+                    transform: scale(1) !important;
+                    margin-top: 10px;
+                }
+                
+                .card-premium-custom:hover {
+                    transform: scale(1.02) !important;
+                }
+            }
+
+            /* Downsell Modal Styles */
+            .downsell-modal-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.85);
+                z-index: 99999;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                padding: 15px;
+                backdrop-filter: blur(5px);
+            }
+
+            .downsell-modal-content {
+                background: #ffffff;
+                border: 3px solid #FF6B35;
+                border-radius: 20px;
+                max-width: 520px;
+                width: 100%;
+                padding: 30px 25px;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+                position: relative;
+                text-align: center;
+                animation: modal-zoom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            }
+
+            @keyframes modal-zoom {
+                from { transform: scale(0.85); opacity: 0; }
+                to { transform: scale(1); opacity: 1; }
+            }
+
+            .downsell-badge {
+                background: #FF6B35;
+                color: #ffffff;
+                padding: 6px 14px;
+                font-size: 0.75rem;
+                font-weight: 800;
+                border-radius: 30px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                display: inline-block;
+                margin-bottom: 12px;
+            }
+
+            .downsell-title {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.4rem;
+                font-weight: 800;
+                color: #1b3a57;
+                line-height: 1.3;
+                margin-top: 5px;
+                margin-bottom: 10px;
+            }
+
+            .downsell-subtitle {
+                font-size: 0.95rem;
+                color: #475569;
+                font-weight: 600;
+                margin-bottom: 20px;
+                line-height: 1.4;
+            }
+
+            .downsell-benefits-box {
+                background: #FFF6F2;
+                border: 1px dashed #FF6B35;
+                border-radius: 12px;
+                padding: 15px 20px;
+                text-align: left;
+                margin-bottom: 20px;
+            }
+
+            .downsell-benefits-box ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .downsell-benefits-box li {
+                font-size: 0.9rem;
+                color: #334155;
+                padding: 6px 0;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-weight: 600;
+            }
+
+            .downsell-price-box {
+                background: #FFFDEB;
+                border: 1px solid #E2D172;
+                border-radius: 12px;
+                padding: 15px;
+                margin-bottom: 25px;
+            }
+
+            .downsell-price-box .old-price {
+                font-size: 1.1rem;
+                color: #ef4444;
+                text-decoration: line-through;
+                font-weight: 700;
+                margin-right: 10px;
+            }
+
+            .downsell-price-box .new-price {
+                font-size: 2.2rem;
+                color: #2e7d32;
+                font-weight: 800;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .btn-downsell-accept {
+                display: block;
+                width: 100%;
+                padding: 18px;
+                background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+                color: white;
+                text-decoration: none;
+                border-radius: 10px;
+                font-weight: 800;
+                font-size: 1.1rem;
+                letter-spacing: 0.3px;
+                box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4);
+                transition: all 0.3s ease;
+                cursor: pointer;
+                border: none;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+            }
+
+            .btn-downsell-accept:hover {
+                background: linear-gradient(135deg, #1b5e20 0%, #0d3c12 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(46, 125, 50, 0.6);
+            }
+
+            .btn-downsell-decline {
+                display: inline-block;
+                color: #64748b;
+                text-decoration: underline;
+                font-size: 0.85rem;
+                font-weight: 600;
+                background: none;
+                border: none;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+
+            .btn-downsell-decline:hover {
+                color: #334155;
+            }
+
+            @media (max-width: 480px) {
+                .downsell-modal-content {
+                    padding: 20px 15px;
+                }
+                
+                .downsell-title {
+                    font-size: 1.25rem;
+                }
+                
+                .downsell-subtitle {
+                    font-size: 0.85rem;
+                    margin-bottom: 15px;
+                }
+                
+                .downsell-benefits-box {
+                    padding: 10px 15px;
+                }
+                
+                .downsell-benefits-box li {
+                    font-size: 0.82rem;
+                }
+                
+                .downsell-price-box {
+                    padding: 10px;
+                    margin-bottom: 20px;
+                }
+                
+                .downsell-price-box .new-price {
+                    font-size: 1.8rem;
+                }
+                
+                .btn-downsell-accept {
+                    padding: 15px;
+                    font-size: 0.95rem;
+                }
+            }
+        </style>
+        
+
+
+        <div class="pricing-grid-custom">
+
+            <!-- PLANO BÁSICO -->
+            <div class="card-basic-custom fade-in">
+                <span class="pricing-tag-gray">⚠️ Versão Incompleta</span>
+                <div>
+                    <div class="plan-header" style="text-align: center; margin-bottom: 20px;">
+                        <h3 style="font-size: 1.6rem; color: #334155; font-family: 'Poppins', sans-serif; font-weight: 700; margin-bottom: 5px;">Guia Básico</h3>
+                        <p class="plan-subtitle" style="font-size: 0.9rem; color: #64748b;">Ideal apenas para testar</p>
+                    </div>
+                    <div class="plan-price" style="margin-bottom: 25px; text-align: center;">
+                        <span class="old-price" style="display: block; font-size: 1.1rem; color: #94a3b8; text-decoration: line-through; margin-bottom: 8px; font-weight: 500;">De R$ 47,00</span>
+                        <div style="display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: rgba(0, 0, 0, 0.02); padding: 8px 18px; border-radius: 8px; border: 1px dashed rgba(0, 0, 0, 0.1);">
+                            <span class="currency" style="font-size: 1.2rem; color: #475569; font-weight: 600; align-self: flex-start; margin-top: 5px;">R$</span>
+                            <span class="amount" style="font-size: 3.3rem; color: #1e293b; font-weight: 800; line-height: 1; letter-spacing: -1px;">14,90</span>
+                        </div>
+                        <span style="display: block; font-size: 0.85rem; color: #64748b; font-weight: 600; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.5px;">💥 Economize R$ 32,10 (68% OFF)</span>
+                    </div>
+                    <ul class="plan-features-custom">
+                        <li>✅ <strong>30 Receitas de Massinha</strong> (Caseiras)</li>
+                        <li>✅ Receitas por espécie de peixe</li>
+                        <li>✅ Ingredientes fáceis de encontrar</li>
+                        <li>✅ Dicas básicas de armazenamento</li>
+                        <li>✅ Acesso imediato no celular (PDF)</li>
+                        <li>✅ Garantia Incondicional de 7 Dias</li>
+                        <li style="color: #ef4444; text-decoration: line-through; font-size: 0.9rem; opacity: 0.65; font-weight: 500;">❌ +30 Receitas de Massinhas <span style="font-size: 0.75rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">BLOQUEADO</span></li>
+                        <li style="color: #ef4444; text-decoration: line-through; font-size: 0.9rem; opacity: 0.65; font-weight: 500;">❌ 10 Receitas Secretas de Ceva <span style="font-size: 0.75rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">BLOQUEADO</span></li>
+                        <li style="color: #ef4444; text-decoration: line-through; font-size: 0.9rem; opacity: 0.65; font-weight: 500;">❌ 5 Atrativos Líquidos Secretos <span style="font-size: 0.75rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">BLOQUEADO</span></li>
+                        <li style="color: #ef4444; text-decoration: line-through; font-size: 0.9rem; opacity: 0.65; font-weight: 500;">❌ Guia de Iscas por Estação <span style="font-size: 0.75rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">BLOQUEADO</span></li>
+                        <li style="color: #ef4444; text-decoration: line-through; font-size: 0.9rem; opacity: 0.65; font-weight: 500;">❌ Suporte VIP via WhatsApp <span style="font-size: 0.75rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">BLOQUEADO</span></li>
+                    </ul>
                 </div>
-                <div class="plan-price">
-                    <span class="currency">R$</span>
-                    <span class="amount">14,90</span>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="javascript:void(0)" id="btn-basic-plan" class="btn-basic-custom" onclick="showDownsellModal(event); return false;">QUERO APENAS O BÁSICO</a>
+                    <span style="display: block; font-size: 0.8rem; color: #94a3b8; margin-top: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Sem os bônus exclusivos</span>
                 </div>
-                <ul class="plan-features">
-                    <li>✅ <strong>30 Receitas Completas</strong></li>
-                    <li>✅ Receitas por espécie de peixe</li>
-                    <li>✅ Ingredientes fáceis de encontrar</li>
-                    <li>✅ Dicas de armazenamento</li>
-                    <li>✅ Acesso Imediato (PDF)</li>
-                    <li>✅ Garantia de 7 Dias</li>
-                    <li>✅ <strong>BÔNUS: 5 Receitas de Atrativos</strong></li>
-                </ul>
-                <a href="https://tilimcheckout.com/checkout?p=fd9406b291f76578564a134b431e18f8" class="btn-plan btn-featured">QUERO RECEBER AS 30 RECEITAS</a>
+            </div>
+
+            <!-- PLANO COMPLETO (RECOMENDADO) -->
+            <div class="card-premium-custom fade-in">
+                <span class="pricing-tag-orange">⭐ RECOMENDADO - 97% ESCOLHEM ESTE</span>
+                <div>
+                    <div class="plan-header" style="text-align: center; margin-bottom: 15px; margin-top: 10px;">
+                        <h3 style="font-size: 1.8rem; color: #1b3a57; font-family: 'Poppins', sans-serif; font-weight: 800; margin-bottom: 5px;">Combo Premium</h3>
+                        <p class="plan-subtitle" style="font-size: 0.95rem; color: #ff6b35; font-weight: 600;">O maior e melhor arsenal de pesca</p>
+                    </div>
+
+
+                    
+                    <div class="plan-price" style="margin-bottom: 15px; text-align: center;">
+                        <span style="display: block; font-size: 0.85rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Hoje por apenas:</span>
+                        <div style="display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: rgba(255, 107, 43, 0.08); padding: 8px 18px; border-radius: 8px; border: 1px dashed rgba(255, 107, 43, 0.3);">
+                            <span class="currency" style="font-size: 1.4rem; color: var(--accent); font-weight: 700; align-self: flex-start; margin-top: 5px;">R$</span>
+                            <span class="amount" style="font-size: 4.2rem; color: var(--accent); font-weight: 800; line-height: 1; letter-spacing: -1px;">29,90</span>
+                        </div>
+                        <span style="display: block; font-size: 1rem; color: #2e7d32; font-weight: 700; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.5px;">💰 VOCÊ ECONOMIZA R$ 84,10 (74% OFF)</span>
+                    </div>
+                    
+                    <ul class="plan-features-custom" style="margin-top: 15px; margin-bottom: 15px;">
+                        <li>✅ <strong>60 Receitas Completas de Massinhas</strong></li>
+                        <li>✅ Receitas específicas por espécie de peixe</li>
+                        <li>✅ Ingredientes fáceis de achar e muito baratos</li>
+                        <li>✅ Dicas práticas de armazenamento e conservação</li>
+                        <li>✅ Acesso imediato no celular ou computador (PDF)</li>
+                        <li>✅ Garantia Incondicional de 7 Dias</li>
+                        
+                        <!-- DESTAQUES DOS BÔNUS COM FUNDO AMARELO E VERDE -->
+                        <li style="background: #FFFDEB; border: 1px dashed #E2D172; padding: 12px 14px; border-radius: 8px; margin: 10px 0; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem;">
+                            <span style="font-size: 1.2rem; line-height: 1;">🎁</span>
+                            <div>
+                                <strong style="color: #A07F1A; display: block; font-family: 'Poppins', sans-serif;">SUPER BÔNUS #2: 5 Atrativos Secretos</strong>
+                                <span style="font-size: 0.8rem; color: #7A6926; display: block; margin-top: 2px;">Líquidos e em pó que tornam qualquer massa irresistível!</span>
+                            </div>
+                        </li>
+
+                        <li style="background: #FFFDEB; border: 1px dashed #E2D172; padding: 12px 14px; border-radius: 8px; margin: 10px 0; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem;">
+                            <span style="font-size: 1.2rem; line-height: 1;">🎁</span>
+                            <div>
+                                <strong style="color: #A07F1A; display: block; font-family: 'Poppins', sans-serif;">SUPER BÔNUS #1: 10 Receitas de Ceva</strong>
+                                <span style="font-size: 0.8rem; color: #7A6926; display: block; margin-top: 2px;">Atraia cardumes gigantescos para o seu ponto de pesca!</span>
+                            </div>
+                        </li>
+                        
+                        <li style="background: #E8F5E9; border: 1px dashed #81C784; padding: 12px 14px; border-radius: 8px; margin: 10px 0; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem;">
+                            <span style="font-size: 1.2rem; line-height: 1;">🎁</span>
+                            <div>
+                                <strong style="color: #2E7D32; display: block; font-family: 'Poppins', sans-serif;">BÔNUS EXTRA: Guia de Iscas por Estação</strong>
+                                <span style="font-size: 0.8rem; color: #43a047; display: block; margin-top: 2px;">Saiba exatamente o que usar nos dias de frio ou de calor intenso!</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <!-- PROVA SOCIAL -->
+                    <div style="font-size: 0.9rem; font-weight: 700; color: #e0531f; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 6px; background: rgba(224, 83, 31, 0.05); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(224, 83, 31, 0.1);">
+                        <span style="animation: pulse-badge 1s infinite alternate; display: inline-block;">🔥</span> +127 pessoas compraram nas últimas 24h
+                    </div>
+                    
+                    <a href="https://tilimcheckout.com/checkout?p=eaea439c084af4b8a6425b58236b8ec3" class="btn-premium-custom">QUERO O COMBO PREMIUM AGORA</a>
+                    <span style="display: block; font-size: 0.85rem; color: #64748b; margin-top: 10px; font-weight: 600; letter-spacing: 0.3px;">✓ Pagamento 100% seguro  ✓ Acesso imediato</span>
+
+                </div>
             </div>
         </div>
         <p class="pricing-note">🔒 Pagamento seguro • ⚡ Acesso instantâneo • 🛡️ Garantia de 7 dias</p>
@@ -1866,7 +2331,7 @@
     <section class="final-cta">
         <h2>Pronto pra testar na próxima pescaria?</h2>
         <p>Material em PDF, acesso imediato, ingredientes simples.</p>
-        <a href="https://tilimcheckout.com/checkout?p=fd9406b291f76578564a134b431e18f8" class="cta-primary">QUERO RECEBER AS 30 RECEITAS AGORA</a>
+        <a href="#pricing" class="cta-primary">QUERO RECEBER AS RECEITAS AGORA</a>
         <p style="margin-top: 18px; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Acesso imediato &nbsp;•&nbsp; PDF no celular &nbsp;•&nbsp; Pagamento seguro</p>
     </section>
 
@@ -1883,6 +2348,36 @@
             <span class="footer-copy">&copy; 2024 Todos os direitos reservados.</span>
         </div>
     </footer>
+
+    <!-- DOWNSELL MODAL -->
+    <div id="downsell-modal" class="downsell-modal-overlay">
+        <div class="downsell-modal-content">
+            <span class="downsell-badge">🎁 Oportunidade Única</span>
+            <h3 class="downsell-title">ESPERE! NÃO PAGUE MAIS POR MENOS...</h3>
+            <p class="downsell-subtitle">Que tal levar o <strong>Combo Completo (Dobro de Receitas + Todos os Bônus)</strong> por apenas <strong>mais R$ 5,00</strong>?</p>
+            
+            <div class="downsell-benefits-box">
+                <ul>
+                    <li>✅ <strong>60 Receitas de Massinhas</strong> (em vez de apenas 30)</li>
+                    <li>🔥 <strong>SUPER BÔNUS: 10 Receitas de Ceva</strong> (Grátis)</li>
+                    <li>🎁 <strong>BÔNUS EXTRA: 5 Atrativos Líquidos</strong></li>
+                    <li>🎁 <strong>BÔNUS EXTRA: Guia de Iscas por Estação</strong></li>
+                </ul>
+            </div>
+            
+            <div class="downsell-price-box">
+                <span class="old-price">De R$ 99,90</span>
+                <span style="font-size: 0.9rem; color: #475569; font-weight: 700;">Hoje por apenas:</span>
+                <div style="margin-top: 5px;">
+                    <span class="new-price">R$ 19,90</span>
+                </div>
+                <span style="display: block; font-size: 0.8rem; color: #2e7d32; font-weight: 700; margin-top: 5px;">💥 VOCÊ ECONOMIZA R$ 80,00 (80% OFF)</span>
+            </div>
+            
+            <a href="https://tilimcheckout.com/checkout?p=SEU_CHECKOUT_19_90" class="btn-downsell-accept">SIM! QUERO MIGRAR PARA O COMBO POR R$ 19,90</a>
+            <a href="https://tilimcheckout.com/checkout?p=fd9406b291f76578564a134b431e18f8" class="btn-downsell-decline" id="btn-decline-downsell">Não, obrigado. Quero apenas o Guia Básico por R$ 14,90</a>
+        </div>
+    </div>
     <script>
         // Countdown Timer (15 minutes from page load)
         function startCountdown() {
@@ -1918,6 +2413,46 @@
         }
 
         startCountdown();
+
+        // Downsell Modal Logic
+        window.showDownsellModal = function(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (e.stopImmediatePropagation) {
+                    e.stopImmediatePropagation();
+                }
+            }
+            const downsellModal = document.getElementById('downsell-modal');
+            if (downsellModal) {
+                downsellModal.style.display = 'flex';
+            }
+            return false;
+        };
+
+        // Auto-preserve URL parameters on checkout links
+        (function() {
+            const currentParams = window.location.search;
+            if (currentParams) {
+                const cleanParams = currentParams.startsWith('?') ? currentParams.substring(1) : currentParams;
+                document.querySelectorAll('a[href*="tilimcheckout.com"]').forEach(function(link) {
+                    try {
+                        const url = new URL(link.href);
+                        const searchParams = new URLSearchParams(cleanParams);
+                        searchParams.forEach(function(value, key) {
+                            url.searchParams.set(key, value);
+                        });
+                        link.href = url.toString();
+                    } catch (e) {
+                        if (link.href.indexOf('?') !== -1) {
+                            link.href += '&' + cleanParams;
+                        } else {
+                            link.href += '?' + cleanParams;
+                        }
+                    }
+                });
+            }
+        })();
 
         // FAQ Toggle
         function toggleFaq(element) {
