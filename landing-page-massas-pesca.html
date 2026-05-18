@@ -1221,7 +1221,8 @@
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
         }
 
         .fade-in.visible {
@@ -1445,6 +1446,23 @@
         })(window, document, "clarity", "script", "wqrnrdw10u");
     </script>
     <!-- End Microsoft Clarity Code -->
+
+    <script type="text/javascript">
+        function scrollToPricing(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const target = document.getElementById('pricing');
+            if (target) {
+                const offset = target.getBoundingClientRect().top + window.pageYOffset - 10;
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -1459,7 +1477,7 @@
             <p class="subheadline">
                 Receitas simples para usar em rios, lagos, pesqueiros e açudes, com ingredientes fáceis de encontrar.
             </p>
-            <a href="#pricing" class="cta-primary">QUERO RECEBER AS 30 RECEITAS AGORA</a>
+            <a href="javascript:void(0)" onclick="scrollToPricing(event)" class="cta-primary">QUERO RECEBER AS 30 RECEITAS AGORA</a>
             <p style="margin-top: 18px; font-size: 0.85rem; color: rgba(255,255,255,0.8); letter-spacing: 0.3px;">Acesso imediato &nbsp;•&nbsp; Material em PDF &nbsp;•&nbsp; Funciona no celular &nbsp;•&nbsp; Pagamento seguro</p>
         </div>
     </section>
@@ -1492,7 +1510,7 @@
             <div class="comparison-card bad fade-in">
                 <h3>❌ Comprando Pronto</h3>
                 <div class="comparison-image" style="margin-bottom: 25px; border-radius: 8px; overflow: hidden; line-height: 0;">
-                    <img src="mafish-pescador-foto-1-9771.jpg" alt="Massa Industrial Mafish Pescador" style="width: 100%; height: auto; display: block;">
+                    <img src="mafish-pescador-foto-1-9771.jpg" alt="Massa Industrial Mafish Pescador" style="width: 100%; height: auto; display: block;" loading="lazy">
                 </div>
                 <ul>
                     <li>💸 R$ 15-25 por pacote pequeno</li>
@@ -1506,7 +1524,7 @@
             <div class="comparison-card good fade-in">
                 <h3>✅ Fazendo em Casa</h3>
                 <div class="comparison-image" style="margin-bottom: 25px; border-radius: 8px; overflow: hidden; line-height: 0;">
-                    <img src="hq720.jpg" alt="Massa Caseira Altamente Eficiente" style="width: 100%; height: auto; display: block;">
+                    <img src="hq720.jpg" alt="Massa Caseira Altamente Eficiente" style="width: 100%; height: auto; display: block;" loading="lazy">
                 </div>
                 <ul>
                     <li>💰 R$ 5-8 para fazer em QUANTIDADE</li>
@@ -1531,7 +1549,7 @@
         <div class="fish-grid">
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="Nile_Tilapia_Fish_Oreochromis_Aureus_Nile_Perch_PNG-removebg-preview.png" alt="Tilápia" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    <img src="Nile_Tilapia_Fish_Oreochromis_Aureus_Nile_Perch_PNG-removebg-preview.png" alt="Tilápia" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));" loading="lazy">
                 </div>
                 <h3>Tilápia</h3>
                 <p>5 receitas exclusivas com ingredientes que tilápia adora. Ideal para pesca em represas e pesqueiros.</p>
@@ -1540,7 +1558,7 @@
 
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="download__51_-removebg-preview.png" alt="Carpa" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    <img src="download__51_-removebg-preview.png" alt="Carpa" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));" loading="lazy">
                 </div>
                 <h3>Carpa</h3>
                 <p>Massas especiais com essências e atrativos que deixam a carpa louca. Testadas em diversos lagos.</p>
@@ -1549,7 +1567,7 @@
 
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="Tambaqui_Pacu_Fish_Piaractus_Mesopotamicus_PNG-removebg-preview.png" alt="Tambaqui" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    <img src="Tambaqui_Pacu_Fish_Piaractus_Mesopotamicus_PNG-removebg-preview.png" alt="Tambaqui" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));" loading="lazy">
                 </div>
                 <h3>Pacu e Tambaqui</h3>
                 <p>Receitas com base em milho e frutas que esses peixes não resistem. Sucesso garantido!</p>
@@ -1558,7 +1576,7 @@
 
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="Os_segredos_da_pescaria_de_Traíra__melhor_horário__as_iscas-removebg-preview.png" alt="Traíra" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2)); transform: scaleX(-1);">
+                    <img src="Os_segredos_da_pescaria_de_Traíra__melhor_horário__as_iscas-removebg-preview.png" alt="Traíra" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2)); transform: scaleX(-1);" loading="lazy">
                 </div>
                 <h3>Traíra</h3>
                 <p>Massas com alto teor de proteína animal para atrair esse predador. Perfeito para pesca em rios.</p>
@@ -1567,7 +1585,7 @@
 
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="Peixe_Lambari__característica__habitat_e_sua_reprodução-removebg-preview.png" alt="Lambari" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2)); transform: scaleX(-1);">
+                    <img src="Peixe_Lambari__característica__habitat_e_sua_reprodução-removebg-preview.png" alt="Lambari" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2)); transform: scaleX(-1);" loading="lazy">
                 </div>
                 <h3>Lambari</h3>
                 <p>Receitas práticas e econômicas para fisgar lambari em quantidade. Ótimo para pescarias recreativas.</p>
@@ -1576,7 +1594,7 @@
 
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="pintado-removebg-preview.png" alt="Pintado" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    <img src="pintado-removebg-preview.png" alt="Pintado" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));" loading="lazy">
                 </div>
                 <h3>Bagre e Pintado</h3>
                 <p>Massas de fundo com forte aroma que atraem bagres de longe. Receitas específicas para pesca de fundo.</p>
@@ -1585,7 +1603,7 @@
 
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="559df36ca00e554dc512c38ea4edfc08-removebg-preview.png" alt="Dourado" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    <img src="559df36ca00e554dc512c38ea4edfc08-removebg-preview.png" alt="Dourado" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));" loading="lazy">
                 </div>
                 <h3>Dourado</h3>
                 <p>Receitas premium para o rei dos rios. Combinações que despertam o instinto de ataque do dourado.</p>
@@ -1594,7 +1612,7 @@
 
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="download__52_-removebg-preview.png" alt="Corvina" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    <img src="download__52_-removebg-preview.png" alt="Corvina" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));" loading="lazy">
                 </div>
                 <h3>Corvina e Robalo</h3>
                 <p>Massas adaptadas para pesca de água salgada. Ingredientes que funcionam na praia e costões.</p>
@@ -1603,7 +1621,7 @@
 
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="download__53_-removebg-preview.png" alt="Pirarucu" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    <img src="download__53_-removebg-preview.png" alt="Pirarucu" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));" loading="lazy">
                 </div>
                 <h3>Pirarucu</h3>
                 <p>Receitas especiais para o gigante amazônico. Massas de alto impacto que atraem esse troféu dos rios.</p>
@@ -1612,7 +1630,7 @@
 
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="pirarara-1-removebg-preview.png" alt="Pirarara" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    <img src="pirarara-1-removebg-preview.png" alt="Pirarara" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));" loading="lazy">
                 </div>
                 <h3>Pirarara</h3>
                 <p>Massas robustas para esse bagre poderoso. Ingredientes de forte aroma que funcionam de dia e noite.</p>
@@ -1621,7 +1639,7 @@
 
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="download__54_-removebg-preview.png" alt="Piau" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2)); transform: scaleX(-1);">
+                    <img src="download__54_-removebg-preview.png" alt="Piau" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2)); transform: scaleX(-1);" loading="lazy">
                 </div>
                 <h3>Piaus e Piapara</h3>
                 <p>Receitas versáteis para essas espécies populares em rios. Perfeito para pescarias em corredeiras.</p>
@@ -1630,7 +1648,7 @@
 
             <div class="fish-card fade-in">
                 <div class="fish-icon">
-                    <img src="download__50_-removebg-preview.png" alt="Tucunaré" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    <img src="download__50_-removebg-preview.png" alt="Tucunaré" style="width:170px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));" loading="lazy">
                 </div>
                 <h3>Tucunaré</h3>
                 <p>Massas e atrativos especialmente formulados para o rei das pescarias esportivas. Receitas que despertam a agressividade desse predador feroz.</p>
@@ -2134,11 +2152,11 @@
 
             <!-- PLANO BÁSICO -->
             <div class="card-basic-custom fade-in">
-                <span class="pricing-tag-gray">⚠️ Versão Incompleta</span>
+                <span class="pricing-tag-gray">PLANO BÁSICO</span>
                 <div>
                     <div class="plan-header" style="text-align: center; margin-bottom: 20px;">
                         <h3 style="font-size: 1.6rem; color: #334155; font-family: 'Poppins', sans-serif; font-weight: 700; margin-bottom: 5px;">Guia Básico</h3>
-                        <p class="plan-subtitle" style="font-size: 0.9rem; color: #64748b;">Ideal apenas para testar</p>
+                        <p class="plan-subtitle" style="font-size: 0.9rem; color: #64748b;">Para começar pelo essencial</p>
                     </div>
                     <div class="plan-price" style="margin-bottom: 25px; text-align: center;">
                         <span class="old-price" style="display: block; font-size: 1.1rem; color: #94a3b8; text-decoration: line-through; margin-bottom: 8px; font-weight: 500;">De R$ 47,00</span>
@@ -2149,80 +2167,53 @@
                         <span style="display: block; font-size: 0.85rem; color: #64748b; font-weight: 600; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.5px;">💥 Economize R$ 32,10 (68% OFF)</span>
                     </div>
                     <ul class="plan-features-custom">
-                        <li>✅ <strong>30 Receitas de Massinha</strong> (Caseiras)</li>
+                        <li>✅ 30 Receitas de Massinha</li>
                         <li>✅ Receitas por espécie de peixe</li>
                         <li>✅ Ingredientes fáceis de encontrar</li>
-                        <li>✅ Dicas básicas de armazenamento</li>
-                        <li>✅ Acesso imediato no celular (PDF)</li>
-                        <li>✅ Garantia Incondicional de 7 Dias</li>
-                        <li style="color: #ef4444; text-decoration: line-through; font-size: 0.9rem; opacity: 0.65; font-weight: 500;">❌ +30 Receitas de Massinhas <span style="font-size: 0.75rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">BLOQUEADO</span></li>
-                        <li style="color: #ef4444; text-decoration: line-through; font-size: 0.9rem; opacity: 0.65; font-weight: 500;">❌ 10 Receitas Secretas de Ceva <span style="font-size: 0.75rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">BLOQUEADO</span></li>
-                        <li style="color: #ef4444; text-decoration: line-through; font-size: 0.9rem; opacity: 0.65; font-weight: 500;">❌ 5 Atrativos Líquidos Secretos <span style="font-size: 0.75rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">BLOQUEADO</span></li>
-                        <li style="color: #ef4444; text-decoration: line-through; font-size: 0.9rem; opacity: 0.65; font-weight: 500;">❌ Guia de Iscas por Estação <span style="font-size: 0.75rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">BLOQUEADO</span></li>
-                        <li style="color: #ef4444; text-decoration: line-through; font-size: 0.9rem; opacity: 0.65; font-weight: 500;">❌ Suporte VIP via WhatsApp <span style="font-size: 0.75rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; margin-left: 5px;">BLOQUEADO</span></li>
+                        <li>✅ Dicas de armazenamento</li>
+                        <li>✅ Acesso imediato (PDF)</li>
+                        <li>✅ Garantia de 7 dias</li>
                     </ul>
                 </div>
                 <div style="text-align: center; margin-top: 20px;">
-                    <a href="javascript:void(0)" id="btn-basic-plan" class="btn-basic-custom" onclick="showDownsellModal(event); return false;">QUERO APENAS O BÁSICO</a>
-                    <span style="display: block; font-size: 0.8rem; color: #94a3b8; margin-top: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Sem os bônus exclusivos</span>
+                    <a href="javascript:void(0)" id="btn-basic-plan" class="btn-basic-custom" onclick="showDownsellModal(event); return false;">QUERO O PLANO BÁSICO</a>
                 </div>
             </div>
 
             <!-- PLANO COMPLETO (RECOMENDADO) -->
             <div class="card-premium-custom fade-in">
-                <span class="pricing-tag-orange">⭐ RECOMENDADO - 97% ESCOLHEM ESTE</span>
+                <span class="pricing-tag-orange">★ MELHOR CUSTO-BENEFÍCIO</span>
                 <div>
                     <div class="plan-header" style="text-align: center; margin-bottom: 15px; margin-top: 10px;">
                         <h3 style="font-size: 1.8rem; color: #1b3a57; font-family: 'Poppins', sans-serif; font-weight: 800; margin-bottom: 5px;">Combo Premium</h3>
-                        <p class="plan-subtitle" style="font-size: 0.95rem; color: #ff6b35; font-weight: 600;">O maior e melhor arsenal de pesca</p>
+                        <p class="plan-subtitle" style="font-size: 0.95rem; color: #ff6b35; font-weight: 600;">O arsenal completo do pescador</p>
                     </div>
 
-
-                    
                     <div class="plan-price" style="margin-bottom: 15px; text-align: center;">
-                        <span style="display: block; font-size: 0.85rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Hoje por apenas:</span>
+                        <span class="old-price" style="display: block; font-size: 1.1rem; color: #94a3b8; text-decoration: line-through; margin-bottom: 8px; font-weight: 500;">De R$ 59,90</span>
                         <div style="display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: rgba(255, 107, 43, 0.08); padding: 8px 18px; border-radius: 8px; border: 1px dashed rgba(255, 107, 43, 0.3);">
                             <span class="currency" style="font-size: 1.4rem; color: var(--accent); font-weight: 700; align-self: flex-start; margin-top: 5px;">R$</span>
                             <span class="amount" style="font-size: 4.2rem; color: var(--accent); font-weight: 800; line-height: 1; letter-spacing: -1px;">29,90</span>
                         </div>
-                        <span style="display: block; font-size: 1rem; color: #2e7d32; font-weight: 700; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.5px;">💰 VOCÊ ECONOMIZA R$ 84,10 (74% OFF)</span>
+                        <span style="display: block; font-size: 1rem; color: #2e7d32; font-weight: 700; margin-top: 12px; text-transform: uppercase; letter-spacing: 0.5px;">💰 Economize R$ 30,00 (50% OFF)</span>
                     </div>
                     
                     <ul class="plan-features-custom" style="margin-top: 15px; margin-bottom: 15px;">
                         <li>✅ <strong>60 Receitas Completas de Massinhas</strong></li>
-                        <li>✅ Receitas específicas por espécie de peixe</li>
-                        <li>✅ Ingredientes fáceis de achar e muito baratos</li>
-                        <li>✅ Dicas práticas de armazenamento e conservação</li>
-                        <li>✅ Acesso imediato no celular ou computador (PDF)</li>
-
+                        <li>✅ Receitas específicas por espécie</li>
+                        <li>✅ Ingredientes baratos e fáceis</li>
+                        <li>✅ Dicas de armazenamento</li>
+                        <li>✅ Acesso imediato (PDF)</li>
+                        <li>✅ Garantia de 7 dias</li>
+                        
+                        <li style="border-top: 1px dashed rgba(255, 107, 43, 0.25); margin-top: 12px; padding-top: 12px; font-weight: 700; color: #e0531f;">🎁 BÔNUS INCLUSOS:</li>
+                        <li style="font-weight: 600; color: #2e7d32;">🎁 10 Receitas Secretas de Ceva</li>
+                        <li style="font-weight: 600; color: #2e7d32;">🎁 5 Atrativos Líquidos Secretos</li>
+                        <li style="font-weight: 600; color: #2e7d32;">🎁 Guia de Iscas por Estação</li>
                     </ul>
                 </div>
                 
                 <div style="text-align: center; margin-top: 20px;">
-                    <!-- TABELA DE ANCORAGEM DE VALOR -->
-                    <div style="background: rgba(46, 125, 50, 0.04); border: 1px solid rgba(46, 125, 50, 0.15); border-radius: 10px; padding: 14px 16px; margin-bottom: 18px; text-align: left; font-size: 0.83rem; line-height: 1.5; color: #334155;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <span>📖 Guia Completo (60 Receitas)</span>
-                            <span style="text-decoration: line-through; color: #64748b;">R$ 17,00</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <span>🎁 Bônus 1: 10 Receitas de Ceva</span>
-                            <span style="font-weight: 700; color: #2e7d32;">INCLUSO (R$ 6,00)</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <span>🎁 Bônus 2: 5 Atrativos Secretos</span>
-                            <span style="font-weight: 700; color: #2e7d32;">INCLUSO (R$ 6,00)</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <span>🎁 Bônus 3: Guia Iscas p/ Estação</span>
-                            <span style="font-weight: 700; color: #2e7d32;">INCLUSO (R$ 6,00)</span>
-                        </div>
-                        <div style="border-top: 1px dashed rgba(0,0,0,0.15); margin-top: 8px; padding-top: 7px; display: flex; justify-content: space-between; font-weight: 800; font-size: 0.88rem; color: #1e293b;">
-                            <span>Valor Real do Pacote:</span>
-                            <span style="text-decoration: line-through; color: #ef4444;">R$ 35,00</span>
-                        </div>
-                    </div>
-
                     <!-- PROVA SOCIAL -->
                     <div style="font-size: 0.9rem; font-weight: 700; color: #e0531f; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 6px; background: rgba(224, 83, 31, 0.05); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(224, 83, 31, 0.1);">
                         <span style="animation: pulse-badge 1s infinite alternate; display: inline-block;">🔥</span> +127 pessoas compraram nas últimas 24h
@@ -2230,7 +2221,6 @@
                     
                     <a href="https://tilimcheckout.com/checkout?p=eaea439c084af4b8a6425b58236b8ec3" class="btn-premium-custom">QUERO O COMBO PREMIUM AGORA</a>
                     <span style="display: block; font-size: 0.85rem; color: #64748b; margin-top: 10px; font-weight: 600; letter-spacing: 0.3px;">✓ Pagamento 100% seguro  ✓ Acesso imediato</span>
-
                 </div>
             </div>
         </div>
@@ -2243,7 +2233,7 @@
         <div class="testimonials-grid">
             <div class="testimonial-card fade-in">
                 <div class="testimonial-image" style="margin: -35px -30px 20px -30px; border-radius: 12px 12px 0 0; overflow: hidden; line-height: 0;">
-                    <img src="Peixe.jpeg" alt="Depoimento João Silva" style="width: 100%; height: auto; display: block;">
+                    <img src="Peixe.jpeg" alt="Depoimento João Silva" style="width: 100%; height: auto; display: block;" loading="lazy">
                 </div>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
                 <p class="testimonial-text">"Testei a receita de fubá com essência no pesqueiro aqui do bairro. Saiu três tilápias bonitas e um tucunaré. Pra mim já valeu o custo do guia inteiro."</p>
@@ -2252,7 +2242,7 @@
 
             <div class="testimonial-card fade-in">
                 <div class="testimonial-image" style="margin: -35px -30px 20px -30px; border-radius: 12px 12px 0 0; overflow: hidden; line-height: 0;">
-                    <img src="download (55).jpeg" alt="Depoimento Carlos Mendes" style="width: 100%; height: auto; display: block;">
+                    <img src="download (55).jpeg" alt="Depoimento Carlos Mendes" style="width: 100%; height: auto; display: block;" loading="lazy">
                 </div>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
                 <p class="testimonial-text">"Fiz a receita de milho com fruta e fui num lago particular. Saiu esse tambaqui grandão. Simples de fazer, ingredientes baratos, funcionou bem."</p>
@@ -2261,7 +2251,7 @@
 
             <div class="testimonial-card fade-in">
                 <div class="testimonial-image" style="margin: -35px -30px 20px -30px; border-radius: 12px 12px 0 0; overflow: hidden; line-height: 0;">
-                    <img src="download (56).jpeg" alt="Depoimento Ricardo Santos" style="width: 100%; height: auto; display: block;">
+                    <img src="download (56).jpeg" alt="Depoimento Ricardo Santos" style="width: 100%; height: auto; display: block;" loading="lazy">
                 </div>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
                 <p class="testimonial-text">"Usei a receita de massa forte pra pirarara. A fisgada veio em menos de meia hora. Material bem explicado, dá pra entender fácil."</p>
@@ -2275,7 +2265,7 @@
         <div class="who-content fade-in">
             <div class="who-image">
                 <div style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 4px solid var(--water); margin: 0 auto; line-height: 0;">
-                    <img src="download.jpg" alt="Perfil Oficial Massinhas de Pesca" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img src="download.jpg" alt="Perfil Oficial Massinhas de Pesca" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
                 </div>
             </div>
             <div class="who-text">
@@ -2369,7 +2359,7 @@
     <section class="final-cta">
         <h2>Pronto pra testar na próxima pescaria?</h2>
         <p>Material em PDF, acesso imediato, ingredientes simples.</p>
-        <a href="#pricing" class="cta-primary">QUERO RECEBER AS RECEITAS AGORA</a>
+        <a href="javascript:void(0)" onclick="scrollToPricing(event)" class="cta-primary">QUERO RECEBER AS RECEITAS AGORA</a>
         <p style="margin-top: 18px; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Acesso imediato &nbsp;•&nbsp; PDF no celular &nbsp;•&nbsp; Pagamento seguro</p>
     </section>
 
@@ -2391,29 +2381,32 @@
     <div id="downsell-modal" class="downsell-modal-overlay" onclick="if(event.target===this) this.style.display='none'">
         <div class="downsell-modal-content" style="max-width: 420px; width: calc(100% - 24px); padding: 22px 18px; border-radius: 16px; max-height: 92vh; overflow-y: auto;">
             <span class="downsell-badge" style="font-size: 0.7rem; padding: 5px 12px;">🎁 Oportunidade Única</span>
-            <h3 class="downsell-title" style="font-size: 1.2rem; margin: 8px 0 6px;">ESPERE! NÃO PAGUE MAIS POR MENOS...</h3>
+            <h3 class="downsell-title" style="font-size: 1.2rem; margin: 8px 0 6px;">🔥 ESPERA! ANTES DE FECHAR...</h3>
             <p class="downsell-subtitle" style="font-size: 0.88rem; margin-bottom: 14px;">
-                Leve o <strong>Combo Completo</strong> com 60 receitas + todos os bônus por apenas <strong style="color:#FF6B35;">mais R$ 5,00</strong>!
+                Já que você tá levando o básico, por <strong>mais R$ 5,00</strong> eu libero o <strong>COMBO COMPLETO</strong> pra você:
             </p>
 
             <!-- LISTA COMPACTA -->
             <div style="background: #FFF6F2; border: 1px dashed #FF6B35; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; text-align: left; font-size: 0.85rem; color: #334155;">
-                <div style="margin-bottom: 5px;">✅ <strong>60 Receitas</strong> (em vez de 30)</div>
-                <div style="margin-bottom: 5px;">🔥 <strong>10 Receitas de Ceva</strong> (Grátis)</div>
-                <div style="margin-bottom: 5px;">🎁 <strong>5 Atrativos Líquidos</strong></div>
-                <div>🎁 <strong>Guia de Iscas por Estação</strong></div>
+                <div style="margin-bottom: 5px;">✅ 60 Receitas (em vez de 30)</div>
+                <div style="margin-bottom: 5px;">🎁 10 Receitas de Ceva (Grátis)</div>
+                <div style="margin-bottom: 5px;">🎁 5 Atrativos Líquidos</div>
+                <div style="margin-bottom: 5px;">🎁 Guia de Iscas por Estação</div>
             </div>
 
             <!-- PREÇO -->
             <div style="background: #FFFDEB; border: 1px solid #E2D172; border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; text-align: center;">
-                <span style="font-size: 0.85rem; color: #475569; font-weight: 600;">Hoje por apenas:</span>
+                <span style="font-size: 0.85rem; color: #475569; font-weight: 600;">De <span style="text-decoration: line-through; color: #ef4444;">R$ 49,90</span> por apenas:</span>
                 <div style="font-size: 2rem; color: #2e7d32; font-weight: 800; font-family: 'Poppins', sans-serif; line-height: 1.2;">R$ 19,90</div>
-                <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 700;">💥 Economize R$ 80,00 (80% OFF)</span>
+                <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 700;">💥 Economize R$ 30,00 (60% OFF)</span>
             </div>
 
-            <a href="https://tilimcheckout.com/checkout?p=SEU_CHECKOUT_19_90" class="btn-downsell-accept" style="font-size: 1rem; padding: 16px; margin-bottom: 12px;">
-                ✅ SIM! QUERO O COMBO POR R$ 19,90
+            <a href="https://tilimcheckout.com/checkout?p=SEU_CHECKOUT_19_90" class="btn-downsell-accept" style="font-size: 1rem; padding: 16px; margin-bottom: 8px;">
+                SIM! QUERO O COMBO POR R$ 19,90
             </a>
+            
+            <span style="display: block; font-size: 0.78rem; color: #f59e0b; font-weight: 700; text-align: center; margin-bottom: 12px;">⚠️ Esta oferta aparece uma única vez</span>
+
             <a href="https://tilimcheckout.com/checkout?p=fd9406b291f76578564a134b431e18f8" class="btn-downsell-decline" id="btn-decline-downsell" style="font-size: 0.85rem; display: block; text-align: center; padding: 8px;">
                 Não, quero só o Básico por R$ 14,90
             </a>
