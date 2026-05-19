@@ -1753,8 +1753,8 @@
                 width: 100%;
                 max-width: 440px;
                 position: relative;
-                opacity: 0.65;
-                filter: grayscale(35%);
+                
+                
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -1762,8 +1762,8 @@
                 transition: all 0.3s ease;
             }
             .card-basic-custom:hover {
-                opacity: 0.8;
-                filter: grayscale(10%);
+                
+                
                 box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             }
             
@@ -2185,56 +2185,11 @@
                     </ul>
                 </div>
                 <div style="text-align: center; margin-top: 20px;">
-                    <a href="javascript:void(0)" id="btn-basic-plan" class="btn-basic-custom" onclick="showDownsellModal(event);">QUERO O PLANO BÁSICO</a>
+                    <a href="https://tilimcheckout.com/checkout?p=fd9406b291f76578564a134b431e18f8" class="btn-premium-custom">QUERO O PLANO BÁSICO</a>
                 </div>
             </div>
 
-            <!-- PLANO COMPLETO (RECOMENDADO) -->
-            <div class="card-premium-custom fade-in">
-                <span class="pricing-tag-orange">★ MELHOR CUSTO-BENEFÍCIO</span>
-                <div>
-                    <div class="plan-header" style="text-align: center; margin-bottom: 15px; margin-top: 10px;">
-                        <h3 style="font-size: 1.8rem; color: #1b3a57; font-family: 'Poppins', sans-serif; font-weight: 800; margin-bottom: 5px;">Combo Premium</h3>
-                        <p class="plan-subtitle" style="font-size: 0.95rem; color: #ff6b35; font-weight: 600;">O arsenal completo do pescador</p>
-                    </div>
-
-                    <div class="plan-price" style="margin-bottom: 15px; text-align: center;">
-                        <span class="old-price" style="display: block; font-size: 1.1rem; color: #94a3b8; text-decoration: line-through; margin-bottom: 8px; font-weight: 500;">De R$ 59,90</span>
-                        <div style="display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: rgba(255, 107, 43, 0.08); padding: 8px 18px; border-radius: 8px; border: 1px dashed rgba(255, 107, 43, 0.3);">
-                            <span class="currency" style="font-size: 1.4rem; color: var(--accent); font-weight: 700; align-self: flex-start; margin-top: 5px;">R$</span>
-                            <span class="amount" style="font-size: 4.2rem; color: var(--accent); font-weight: 800; line-height: 1; letter-spacing: -1px;">29,90</span>
-                        </div>
-                        <span style="display: block; font-size: 0.85rem; color: #ff6b35; font-weight: 800; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;">Pagamento Único</span>
-                        <span style="display: block; font-size: 1rem; color: #2e7d32; font-weight: 700; margin-top: 10px; text-transform: uppercase; letter-spacing: 0.5px;">💰 Economize R$ 30,00 (50% OFF)</span>
-                    </div>
-                    
-                    <ul class="plan-features-custom" style="margin-top: 15px; margin-bottom: 15px;">
-                        <li>✅ <strong>60 Receitas Completas de Massinhas</strong></li>
-                        <li>✅ Receitas específicas por espécie</li>
-                        <li>✅ Ingredientes baratos e fáceis</li>
-                        <li>✅ Dicas de armazenamento</li>
-                        <li>✅ Acesso imediato (PDF)</li>
-                        <li>✅ Garantia de 7 dias</li>
-                        <li>✅ Pagamento Único</li>
-                        
-                        <li style="border-top: 1px dashed rgba(255, 107, 43, 0.25); margin-top: 12px; padding-top: 12px; font-weight: 700; color: #e0531f;">🎁 BÔNUS INCLUSOS:</li>
-                        <li style="font-weight: 600; color: #2e7d32;">🎁 10 Receitas Secretas de Ceva</li>
-                        <li style="font-weight: 600; color: #2e7d32;">🎁 5 Atrativos Líquidos Secretos</li>
-                        <li style="font-weight: 600; color: #2e7d32;">🎁 Guia de Iscas por Estação</li>
-                    </ul>
-                </div>
-                
-                <div style="text-align: center; margin-top: 20px;">
-                    <!-- PROVA SOCIAL -->
-                    <div style="font-size: 0.9rem; font-weight: 700; color: #e0531f; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 6px; background: rgba(224, 83, 31, 0.05); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(224, 83, 31, 0.1);">
-                        <span style="animation: pulse-badge 1s infinite alternate; display: inline-block;">🎣</span> Vendido para pescadores em todo o Brasil
-                    </div>
-                    
-                    <a href="https://tilimcheckout.com/checkout?p=eaea439c084af4b8a6425b58236b8ec3" class="btn-premium-custom">QUERO O COMBO PREMIUM AGORA</a>
-                    <span style="display: block; font-size: 0.85rem; color: #64748b; margin-top: 10px; font-weight: 600; letter-spacing: 0.3px;">✓ Pagamento 100% seguro  ✓ Acesso imediato</span>
-                </div>
             </div>
-        </div>
         <p class="pricing-note">🔒 Pagamento seguro • ⚡ Acesso instantâneo • 🛡️ Garantia de 7 dias</p>
     </section>
 
@@ -2388,82 +2343,6 @@
         </div>
     </footer>
 
-    <!-- DOWNSELL MODAL -->
-    <div id="downsell-modal" class="downsell-modal-overlay" onclick="if(event.target===this) this.style.display='none'">
-        <div class="downsell-modal-content" style="max-width: 420px; width: calc(100% - 24px); padding: 22px 18px; border-radius: 16px; max-height: 92vh; overflow-y: auto;">
-            <span class="downsell-badge" style="font-size: 0.7rem; padding: 5px 12px;">🎁 Oportunidade Única</span>
-            <h3 class="downsell-title" style="font-size: 1.2rem; margin: 8px 0 6px;">🔥 ESPERA! ANTES DE FECHAR...</h3>
-            <p class="downsell-subtitle" style="font-size: 0.88rem; margin-bottom: 14px;">
-                Já que você tá levando o básico, por <strong>mais R$ 5,00</strong> eu libero o <strong>COMBO COMPLETO</strong> pra você:
-            </p>
-
-            <!-- LISTA COMPACTA -->
-            <div style="background: #FFF6F2; border: 1px dashed #FF6B35; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; text-align: left; font-size: 0.85rem; color: #334155;">
-                <div style="margin-bottom: 5px;">✅ 60 Receitas (em vez de 30)</div>
-                <div style="margin-bottom: 5px;">🎁 10 Receitas de Ceva (Grátis)</div>
-                <div style="margin-bottom: 5px;">🎁 5 Atrativos Líquidos</div>
-                <div style="margin-bottom: 5px;">🎁 Guia de Iscas por Estação</div>
-            </div>
-
-            <!-- PREÇO -->
-            <div style="background: #FFFDEB; border: 1px solid #E2D172; border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; text-align: center;">
-                <span style="font-size: 0.85rem; color: #475569; font-weight: 600;">De <span style="text-decoration: line-through; color: #ef4444;">R$ 59,90</span> por apenas:</span>
-                <div style="font-size: 2rem; color: #2e7d32; font-weight: 800; font-family: 'Poppins', sans-serif; line-height: 1.2;">R$ 19,90</div>
-                <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 700;">💥 Economize R$ 40,00 (67% OFF)</span>
-            </div>
-
-            <a href="https://tilimcheckout.com/checkout?p=a7906b25a15d689019eb0d64380b7fff" class="btn-downsell-accept" style="font-size: 1rem; padding: 16px; margin-bottom: 8px;">
-                SIM! QUERO O COMBO POR R$ 19,90
-            </a>
-            
-            <span style="display: block; font-size: 0.78rem; color: #f59e0b; font-weight: 700; text-align: center; margin-bottom: 12px;">⚠️ Esta oferta aparece uma única vez</span>
-
-            <a href="https://tilimcheckout.com/checkout?p=fd9406b291f76578564a134b431e18f8" class="btn-downsell-decline" id="btn-decline-downsell" style="font-size: 0.85rem; display: block; text-align: center; padding: 8px;">
-                Não, quero só o Básico por R$ 14,90
-            </a>
-        </div>
-    </div>
-
-    <!-- EXIT INTENT POPUP -->
-    <div id="exitPopup" class="exit-popup" onclick="if(event.target===this) closePopup()">
-        <div class="exit-popup-content" style="max-width: 440px; padding: 30px 20px; border-radius: 16px;">
-            <button class="close-popup" onclick="closePopup()">&times;</button>
-            <span class="downsell-badge" style="background: #FF6B35; color: #ffffff; padding: 5px 12px; font-size: 0.7rem; font-weight: 800; border-radius: 30px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 10px;">🎁 Oportunidade Única</span>
-            <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 800; color: #1b3a57; line-height: 1.3; margin: 5px 0 8px;">🔥 ESPERA! NÃO VÁ EMBORA...</h2>
-            <p class="exit-subtitle" style="font-size: 0.88rem; color: #475569; font-weight: 600; margin-bottom: 15px; line-height: 1.4;">
-                Liberei uma condição imperdível para você não perder essa chance de pegar mais peixes:
-            </p>
-            
-            <div class="exit-offer" style="background: #FFF6F2; border: 1px dashed #FF6B35; border-radius: 12px; padding: 12px 14px; margin-bottom: 15px; text-align: left;">
-                <p class="exit-text" style="font-size: 0.85rem; color: #334155; margin-bottom: 10px; line-height: 1.4; font-weight: 600;">
-                    Garanta o <strong style="color: #e0531f;">COMBO PREMIUM COMPLETO</strong> hoje:
-                </p>
-                <div style="font-size: 0.82rem; color: #334155; margin-bottom: 4px;">✅ 60 Receitas Completas</div>
-                <div style="font-size: 0.82rem; color: #334155; margin-bottom: 4px;">🎁 10 Receitas de Ceva (Grátis)</div>
-                <div style="font-size: 0.82rem; color: #334155; margin-bottom: 4px;">🎁 5 Atrativos Líquidos</div>
-                <div style="font-size: 0.82rem; color: #334155;">🎁 Guia de Iscas por Estação</div>
-            </div>
-            
-            <div style="background: #FFFDEB; border: 1px solid #E2D172; border-radius: 12px; padding: 10px; margin-bottom: 15px; text-align: center;">
-                <span style="font-size: 0.82rem; color: #475569; font-weight: 600;">De <span style="text-decoration: line-through; color: #ef4444;">R$ 59,90</span> por apenas:</span>
-                <div class="exit-price" style="margin: 5px 0; justify-content: center;">
-                    <span class="exit-new" style="font-size: 2.2rem; color: #2e7d32; font-weight: 800; font-family: 'Poppins', sans-serif;">R$ 19,90</span>
-                </div>
-                <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 700; display: block;">💥 Economize R$ 40,00 (67% OFF)</span>
-            </div>
-            
-            <a href="https://tilimcheckout.com/checkout?p=a7906b25a15d689019eb0d64380b7fff" class="exit-cta" style="font-size: 1rem; padding: 16px; margin-bottom: 8px; font-weight: 800; background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%); border-radius: 10px; box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4); text-transform: uppercase; text-align: center;">
-                SIM! QUERO O COMBO POR R$ 19,90
-            </a>
-            
-            <span style="display: block; font-size: 0.78rem; color: #f59e0b; font-weight: 700; text-align: center; margin-bottom: 8px;">⚠️ Esta oferta é única e exclusiva para agora</span>
-            
-            <button class="exit-decline" onclick="closePopup()" style="font-size: 0.82rem; color: #64748b; font-weight: 600; text-decoration: underline; background: none; border: none; cursor: pointer; transition: all 0.2s ease;">
-                Não, obrigado. Prefiro pagar o valor cheio depois.
-            </button>
-        </div>
-    </div>
-
     <script>
         // Countdown Timer (15 minutes from page load)
         function startCountdown() {
@@ -2500,21 +2379,7 @@
 
         startCountdown();
 
-        // Downsell Modal Logic
-        window.showDownsellModal = function(e) {
-            if (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                if (e.stopImmediatePropagation) {
-                    e.stopImmediatePropagation();
-                }
-            }
-            const downsellModal = document.getElementById('downsell-modal');
-            if (downsellModal) {
-                downsellModal.style.display = 'flex';
-            }
-            return false;
-        };
+        
 
         // Auto-preserve URL parameters on checkout links
         (function() {
@@ -2581,25 +2446,7 @@
             });
         });
 
-        // Exit Intent Popup Logic (Offering the R$ 19,90 Combo)
-        let popupShown = false;
         
-        document.addEventListener('mouseleave', function(e) {
-            if (e.clientY <= 0 && !popupShown) {
-                const exitPopup = document.getElementById('exitPopup');
-                if (exitPopup) {
-                    exitPopup.style.display = 'flex';
-                    popupShown = true;
-                }
-            }
-        });
-
-        window.closePopup = function() {
-            const exitPopup = document.getElementById('exitPopup');
-            if (exitPopup) {
-                exitPopup.style.display = 'none';
-            }
-        };
     </script>
 </body>
 </html>
